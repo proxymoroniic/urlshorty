@@ -15,6 +15,13 @@ Add your mongodb url and your domain as uri else leave it as localhost
 npm start
 ```
 
+## Docker 
+ 
+ add 'mongodb://mongo:27017/docker-node-mongo' as mongo uri
+```bash
+docker-compose up
+```
+
 ## Endpoint to create short url
 
 ### POST api/url/shorten
