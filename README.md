@@ -5,12 +5,12 @@
 ## Quick Start
 
 ```bash
-# Install dependencies
+git install 
 npm install
+```
+Add your mongodb url and your domain as uri else leave it as localhost
 
-# Edit the default.json file with your mongoURI and baseUrl
-# Use production.json in production env
-
+```bash
 # Run
 npm start
 ```

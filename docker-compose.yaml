@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    networks:
+      - my-private-network
+    ports:
+      - '27017:27017'
+
+  redis: 
+    image: redis
+     networks:
+      - my-private-network
+
+   app:
+    container_name: urlshorty
+    build: .
+    
+    ports:
+      - '5000:5000'
+    depends_on: 
+      - mongo
+      - redis
+
+    networks:
+      my-private-network:
+      driver: bridge
+

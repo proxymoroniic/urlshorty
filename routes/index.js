@@ -7,7 +7,7 @@ const Url = require('../models/Url');
 // @desc      Redirect to long/original URL
 router.get('/:code', async (req, res) => {
   try {
-    const url = await Url.findOne({ urlCode: req.params.code });
+    const url = await Url.find({ urlCode: req.params.code }).cache({ expire: 1800 });
 
     if (url) {
       return res.redirect(url.longUrl);
